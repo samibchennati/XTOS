@@ -1,0 +1,21 @@
+awesome 
+lightdm
+lightdm-gtk-greeter
+nemo
+lxsession
+--END OF MINIMAL INSTALL--
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+wireless_tools
+lxappearance
+light-locker
+vim
+pavucontrol
+neofetch
+htop
+picom
+gtk2-perl
+gnome-power-manager
+
+
