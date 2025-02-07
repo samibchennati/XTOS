@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S picom conky i3 alacritty polybar
+pacman -S picom conky i3 alacritty polybar nitrogen lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gedit firefox git dmenu lxappearance
 
 mkdir /usr/share/backgrounds
 mkdir /home/sami/.config/picom
