@@ -62,6 +62,7 @@ bindsym $mod+z exec "light -U 10"
 bindsym $mod+x exec "light -A 10"
 
 bindsym $mod+i exec "gedit ~/.config/i3/config"
+bindsym $mod+t exec /home/sami/.config/screenlayout/officelayout.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
