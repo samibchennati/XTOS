@@ -19,7 +19,7 @@ mv officelayout.sh /home/sami/.config/screenlayout
 
 git clone https://github.com/Coopydood/HyperFluent-GRUB-Theme
 cd HyperFluent-GRUB-Theme
-mv /arch /boot/grub/themes
+mv arch /boot/grub/themes
 cd
 
 lineNumber=$(grep --line-number "GRUB_THEME=" /etc/default/grub.txt | cut -f1 -d:)
