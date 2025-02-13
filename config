@@ -28,7 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id lxpolkit
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec --no-startup-id picom
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id ~/.fehbg &
 exec --no-startup-id polybar
 exec --no-startup-id blueman-applet
 exec --no-startup-id conky
