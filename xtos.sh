@@ -31,6 +31,7 @@ git clone https://github.com/dracula/gtk
 mv gtk/ /home/sami/.themes
 cp -r /home/sami/.themes/gtk/ /usr/share/themes/ 
 mv -f lightdm-gtk-greeter.conf /etc/lightdm
+systemctl restart lightdm
 
 git clone https://github.com/Coopydood/HyperFluent-GRUB-Theme
 cd HyperFluent-GRUB-Theme
