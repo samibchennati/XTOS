@@ -23,7 +23,7 @@ mv arch/ /boot/grub/themes
 cd
 
 lineNumber=$(grep --line-number "GRUB_THEME=" /etc/default/grub | cut -f1 -d:)
-replacedLine="GRUB_THEME="/boot/grub/themes/hyperfluent-arch/theme.txt""
+replacedLine="GRUB_THEME="/boot/grub/themes/arch/theme.txt""
 sed -i "$lineNumber s/.*/'$replacedLine'/" /etc/default/grub
 
 grub-mkconfig -o /boot/grub/grub.cfg
