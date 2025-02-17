@@ -2,26 +2,28 @@
 
 pacman -S --needed git base-devel picom conky i3 alacritty polybar lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gedit firefox dmenu lxappearance ttf-font-awesome vim nemo feh blueman ibus
 
-mkdir ~/.config/picom
-mkdir ~/.config/conky
-mkdir ~/.config/i3
-mkdir ~/.config/alacritty
-mkdir ~/.config/polybar
-mkdir ~/.config/screenlayout
-mkdir ~/.themes
-mkdir ~/Documents
-mkdir ~/Downloads
-mkdir ~/Pictures
-mkdir ~/Music
-mkdir ~/Videos
+user = $(whoami)
+
+mkdir /home/$user/.config/picom
+mkdir /home/$user/.config/conky
+mkdir /home/$user/.config/i3
+mkdir /home/$user/.config/alacritty
+mkdir /home/$user/.config/polybar
+mkdir /home/$user/.config/screenlayout
+mkdir /home/$user/.themes
+mkdir /home/$user/Documents
+mkdir /home/$user/Downloads
+mkdir /home/$user/Pictures
+mkdir /home/$user/Music
+mkdir /home/$user/Videos
 
 mv backgrounds/ /usr/share
-mv picom.conf ~/.config/picom
-mv conky.conf ~/.config/conky
-mv config ~/.config/i3
-mv alacritty.toml ~/.config/alacritty
-mv config.ini ~/.config/polybar
-mv officelayout.sh ~/.config/screenlayout
+mv picom.conf /home/$user/.config/picom
+mv conky.conf /home/$user/.config/conky
+mv config /home/$user/.config/i3
+mv alacritty.toml /home/$user/.config/alacritty
+mv config.ini /home/$user/.config/polybar
+mv officelayout.sh /home/$user/.config/screenlayout
 mv -f lightdm-gtk-greeter.conf /etc/lightdm
 
 git clone https://github.com/dracula/gtk
