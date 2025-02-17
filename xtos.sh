@@ -1,13 +1,7 @@
 #!/bin/bash
 
-pacman -S --needed git base-devel picom conky i3 alacritty polybar lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gedit firefox git dmenu lxappearance ttf-font-awesome vim nemo feh
-#git clone https://aur.archlinux.org/yay.git
-#cd yay
-#makepkg -si
-#cd
-#yay install brave-bin
+pacman -S --needed git base-devel picom conky i3 alacritty polybar lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gedit firefox dmenu lxappearance ttf-font-awesome vim nemo feh blueman ibus
 
-mkdir /usr/share/backgrounds
 mkdir /home/sami/.config/picom
 mkdir /home/sami/.config/conky
 mkdir /home/sami/.config/i3
@@ -31,7 +25,6 @@ sed -i -e '$a\background = /usr/share/backgrounds/XT_Wallpaper_001.jpg' /etc/lig
 git clone https://github.com/dracula/gtk
 mv gtk/ /home/sami/.themes
 cp -r /home/sami/.themes/gtk/ /usr/share/themes
-systemctl restart lightdm
 
 git clone https://github.com/Coopydood/HyperFluent-GRUB-Theme
 cd HyperFluent-GRUB-Theme
@@ -42,4 +35,5 @@ sed -i -e '$a\GRUB_THEME="/boot/grub/themes/arch/themes.txt"' /etc/default/grub
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
- 
+systemctl restart lightdm
+
