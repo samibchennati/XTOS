@@ -4,18 +4,18 @@ pacman -S --needed git base-devel picom conky i3 alacritty polybar lightdm light
 
 user = $(whoami)
 
-mkdir /home/$user/.config/picom
-mkdir /home/$user/.config/conky
-mkdir /home/$user/.config/i3
-mkdir /home/$user/.config/alacritty
-mkdir /home/$user/.config/polybar
-mkdir /home/$user/.config/screenlayout
-mkdir /home/$user/.themes
-mkdir /home/$user/Documents
-mkdir /home/$user/Downloads
-mkdir /home/$user/Pictures
-mkdir /home/$user/Music
-mkdir /home/$user/Videos
+mkdir -p /home/$user/.config/picom
+mkdir -p /home/$user/.config/conky
+mkdir -p /home/$user/.config/i3
+mkdir -p /home/$user/.config/alacritty
+mkdir -p /home/$user/.config/polybar
+mkdir -p /home/$user/.config/screenlayout
+mkdir -p /home/$user/.themes
+mkdir -p /home/$user/Documents
+mkdir -p /home/$user/Downloads
+mkdir -p /home/$user/Pictures
+mkdir -p /home/$user/Music
+mkdir -p /home/$user/Videos
 
 mv backgrounds/ /usr/share
 mv picom.conf /home/$user/.config/picom
@@ -27,8 +27,8 @@ mv officelayout.sh /home/$user/.config/screenlayout
 mv -f lightdm-gtk-greeter.conf /etc/lightdm
 
 git clone https://github.com/dracula/gtk
-mv gtk/ ~/.themes
-cp -r ~/.themes/gtk/ /usr/share/themes
+mv gtk/ /home/$user/.themes
+cp -r /home/$user/.themes/gtk/ /usr/share/themes
 
 git clone https://github.com/Coopydood/HyperFluent-GRUB-Theme
 cd HyperFluent-GRUB-Theme
