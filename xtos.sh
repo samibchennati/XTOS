@@ -2,7 +2,7 @@
 
 pacman -S --needed git base-devel picom conky i3 alacritty polybar lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gedit firefox dmenu lxappearance ttf-font-awesome vim nemo feh blueman ibus
 
-user = $(whoami)
+user = $SUDO_USER
 
 mkdir -p /home/$user/.config/picom
 mkdir -p /home/$user/.config/conky
