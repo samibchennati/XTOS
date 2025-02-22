@@ -1,8 +1,9 @@
 #!/bin/bash
 
+pacman -Syu
 pacman -S --needed git base-devel picom conky i3 alacritty polybar lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gedit firefox dmenu lxappearance ttf-font-awesome vim nemo feh blueman ibus
 
-user = $SUDO_USER
+user=${SUDO_USER: -$USER}
 
 mkdir -p /home/$user/.config/picom
 mkdir -p /home/$user/.config/conky
@@ -41,4 +42,3 @@ grub-mkconfig -o /boot/grub/grub.cfg
 feh --bg-scale /usr/share/backgrounds/XT_Wallpaper_001.jpg
 sed -i -e '$a\background = /usr/share/backgrounds/XT_Wallpaper_001.jpg' /etc/lightdm/lightdm-gtk-greeter.conf
 
-systemctl restart lightdm
