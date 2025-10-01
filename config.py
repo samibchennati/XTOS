@@ -56,14 +56,14 @@ keys = [
     Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "q", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod, "shift"], "s", lazy.spawn("gnome-screenshot"), desc="Screenshot"),
+    Key([mod, "shift"], "p", lazy.spawn("gnome-screenshot"), desc="Screenshot"),
     Key([mod], "f", lazy.window.toggle_fullscreen()),    
     
     # Launch Applications
    
     Key([mod, "shift"], "b", lazy.spawn("brave"), desc="Launch Brave"),
     Key([mod, "shift"], "n", lazy.spawn("nemo"), desc="Launch Nemo"),
-    Key([mod, "shift"], "s", lazy.spawn("gajim"), desc="Launch Gajim"),    
+  #  Key([mod, "shift"], "s", lazy.spawn("gajim"), desc="Launch Gajim"),    
     Key([mod, "shift"], "g", lazy.spawn("gedit"), desc="Launch Gedit"),
     Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 ]
@@ -97,18 +97,18 @@ layouts = [
     #layout.Stack(num_stacks=2),
     #layout.Bsp(border_width = 3, margin = 10, border_focus = '#ff57ff'),
     #layout.Matrix(),
-     layout.MonadTall(border_width = 3, margin = 20, border_focus = '#ff57ff'),
-     layout.MonadTall(border_width = 3, margin = 0, border_focus = '#ff57ff'),
-     layout.MonadWide(border_width = 3, margin = 20, border_focus = '#ff57ff'),
-     layout.Max(border_width = 2, margin = 20, border_focus = '#ff57ff'),
+     layout.MonadTall(border_width = 3, margin = 20, border_focus = '#cc52cd'),
+     layout.MonadTall(border_width = 3, margin = 0, border_focus = '#cc52cd'),
+     layout.MonadWide(border_width = 3, margin = 20, border_focus = '#cc52cd'),
+     layout.Max(border_width = 2, margin = 20, border_focus = '#cc52cd'),
     #layout.Floating(border_width = 2, margin = 15, border_focus = '#ffffff')
     # layout.RatioTile(),     
      layout.Tile(),
 ]
-
+#282c34   6c6c6c
 #### BAR COLORS ####
 #def init_colors():
-colors = [["#282c34", "#282c34"], # panel background
+colors = [["#282c34", "#6c6c6c", "#282c34"], # panel background
 		["#ffffff", "#ffffff"], # background for current screen tab
 		["#1c1f24", "#1c1f24"], # font color for group names
 		["#dfdfdf", "#dfdfdf"], # background color for layout widget
@@ -140,13 +140,13 @@ screens = [
             		),
             		
             	widget.CPU(
-			format = '  CPU: {load_percent}%',
+			format = '   CPU: {load_percent}%',
             		foreground = colors[1],
                 		background = colors[0]
             		),
        
             	widget.Memory(
-            		fmt = '  Mem: {}',
+            		fmt = '   Mem: {}',
 
             		foreground = colors[1],
             		background = colors[0]
@@ -163,16 +163,6 @@ screens = [
 			background = colors [0]
 			),
 			
-		widget.Image(
-			filename = "~/.config/qtile/icons/python-white.png",
-			scale = "False"
-			),
-		
-        widget.Image(
-			filename = "~/.config/qtile/icons/python.png",
-			scale = "False"
-			),
-	
 	widget.TextBox(
   	     	 text = ' ',
           	 font = "Ubuntu Mono",
@@ -183,7 +173,7 @@ screens = [
             ),
             
 widget.GroupBox(font="Ubuntu Bold",
-           		fontsize = 10,
+           		fontsize = 12,
             		margin_y = 3,
             		margin_x = 0,
             		padding_y = 5,
@@ -191,13 +181,13 @@ widget.GroupBox(font="Ubuntu Bold",
             		borderwidth = 3,
            		active = colors[1],
             		inactive = colors [8],
-            		rounded = False,
+            		rounded = True,
             		highlight_method = "block",
            		highlight_color = colors[1],
             		this_current_screen_border = colors[8],
             		this_screen_border = colors [4],
            		other_current_screen_border = colors[6],
-            		other_screen_border = colors[4],
+            		other_screen_border = colors[3],
             		foreground = colors[2],
             		background = colors[0],       
             		mouse_callbacks={}		
@@ -209,7 +199,7 @@ widget.GroupBox(font="Ubuntu Bold",
          	 background = colors[0],
            	 foreground = colors[1],
           	 padding = 2,
-           	 fontsize = 10
+           	 fontsize = 11
             ),
             		
             	widget.Spacer(
@@ -246,13 +236,14 @@ widget.GroupBox(font="Ubuntu Bold",
                 	
                 widget.Volume(
 			background = colors[0],
-			fmt=' {}'
+			mouse_callbacks={},
+			fmt='   {}'
 			),
 			 
                 widget.Clock(
                		foreground = colors[1],
               		background = colors[0],
-               		format=" %b %d %Y - %H:%M ⏱"
+               		format=" %b %d %Y - %H:%M "
              		),
              	
               	widget.Sep(linewidth = 0, 
@@ -262,6 +253,10 @@ widget.GroupBox(font="Ubuntu Bold",
             		),
             ],
             24,
+            margin=8,
+	    opacity=1.0,
+            border_radius=[16, 16, 16, 16],  # corner radius
+
         ),
     
     ),
